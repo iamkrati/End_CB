@@ -19,23 +19,23 @@
     <div class="grid cad">
         <div class="card">
             <p id="title">Book Title</p>
-            <div class="booktext" id="booktxt">
+            <div class="booktext select" id="booktxt">
                 Select a book on the right side
             </div>
         </div>
         <div class="card">
             <p id="search">Search</p>
             <div>
-                <input type="text">
-                <button type="submit">Search</button>
+                <input type="text" id="sd">
+                <button onclick="high()">Search</button>
             </div>
         </div>
         <div class="card">
             <p id="books">Select a book</p>
-            <div class="books">
-                <p id="alice" onClick="show()">alice in wonderland</p>
-                <p>lord of the rings</p>
-                <p>dr..</p>
+            <div class="bo books">
+                <a href="AliceInWonderland.txt" id="alice">Alice In Wonderland</a>
+                <a href="JekyllAndHyde.txt" id="hyde">Jekyll And Hyde</a>
+                <a href="LOTR.txt" id="lord">Lord Of The Rings</a>
             </div>
         </div>
         <div class="card">
@@ -55,10 +55,10 @@
             </p>
             <div>
                 <p>Document lengh :
-                <p></p>
+                <span id="len"></span>
                 </p>
                 <p>Word Count :
-                <p></p>
+                <span id="showCount"></span>
                 </p>
             </div>
         </div>
@@ -70,17 +70,8 @@
 
     <p class="nextpage"><a href="imagematch.html">Next -> </a></p>
 
-    <script>
-       
-        function show() {
-            var fs = require('fs')
-            fs.readFile('AliceInWonderland.txt', 'utf8', function (err, data) {
-                if (err) throw err;
-                console.log(data);
-                document.getElementById('booktxt')
-                    .textContent = data;
-            });
-        }
+    <script src="index.js">
+    
     </script>
 </body>
 
