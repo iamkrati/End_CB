@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="up">
+        <div class="text">
+            <span>JavaScript PlayGround</span>
+        </div>
+    </div>
+    <br><br>
+    <div class="grid cad">
+        <div class="card">
+            <p id="title">Book Title</p>
+            <div class="booktext" id="booktxt">
+                Select a book on the right side
+            </div>
+        </div>
+        <div class="card">
+            <p id="search">Search</p>
+            <div>
+                <input type="text">
+                <button type="submit">Search</button>
+            </div>
+        </div>
+        <div class="card">
+            <p id="books">Select a book</p>
+            <div class="books">
+                <p id="alice" onClick="show()">alice in wonderland</p>
+                <p>lord of the rings</p>
+                <p>dr..</p>
+            </div>
+        </div>
+        <div class="card">
+            <p id="books">Most Used Words</p>
+            <div>
+
+            </div>
+        </div>
+        <div class="card">
+            <p id="books"> Least Used Words</p>
+            <div>
+
+            </div>
+        </div>
+        <div class="card">
+            <p id="books">Document Stats
+            </p>
+            <div>
+                <p>Document lengh :
+                <p></p>
+                </p>
+                <p>Word Count :
+                <p></p>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <p class="nextpage"><a href="imagematch.html">Next -> </a></p>
+
+    <script>
+       
+        function show() {
+            var fs = require('fs')
+            fs.readFile('AliceInWonderland.txt', 'utf8', function (err, data) {
+                if (err) throw err;
+                console.log(data);
+                document.getElementById('booktxt')
+                    .textContent = data;
+            });
+        }
+    </script>
+</body>
+
+</html>
